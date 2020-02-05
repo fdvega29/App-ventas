@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+    {{#each entradas}}
+        <div class="col-md-3">
+            <div class="card my-4">
+                <div class="card-header bg-dark" style="color: white">
+                    Nuevo Post <a href="/entradas/edit/{{_id}}"><i class="fas fa-edit"></i></a>
+                </div>
+                <div class="card-body">
+                    <h4>{{titulo}}</h4>
+                    <p>{{descripcion}}</p>
+                </div>
+                <form action="/entradas/eliminar/{{_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="btn btn-danger btn-block" type="submit">Eliminar</button>
+                </form>
+            </div>
+        </div>
+     {{else}}
+        <div class="col-md-12 mt-4">
+            <div class="jumbotron">
+            <h1 class="display-4">Hello {{user.email}}</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <a class="btn btn-primary btn-lg" href="/entradas/add" role="button">Publicar un proyecto</a>
+            </div>
+        </div>   
+    {{/each}}
+  </div>
+</div>
+
