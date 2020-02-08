@@ -48,6 +48,11 @@ app.use((req, res, next) =>{
 app.use(require('./routes/index'));
 app.use(require('./routes/entrada'));
 app.use(require('./routes/users'));
+app.use(require('./routes/pedidos'));
+app.use(require('./routes/comidas'));
+app.use(require('./routes/bebidas'));
+
+
 // Static Files
 app.use(express.static(path.join(__dirname, 'public')));
 // Server in Listenning

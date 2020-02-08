@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row mt-4">
+        <h3 class="col-sm-6 col-md-12 text-center text-uppercase" style="color: seashell;">Listado de comidas</h3>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row my-4">
+        <div class="col-sm-6 col-md-12" style="overflow-x:auto;">
+            <table class="table table-bordered" style="background: white;">
+                <thead class="thead-dark">
+                    <tr>
+                        <!--<th class="text-center text-uppercase">N°</th>-->
+                        <th class="text-center text-uppercase">Descripcion</th>
+                        <th class="text-center text-uppercase">Precio</th>
+                        <th class="text-center text-uppercase">Editar</th>
+                        <th class="text-center text-uppercase">Eliminar</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+
+                    {{#each comidas}}
+                    <tr>
+                        <!--<td class="text-center">{{@key}}</td>-->
+                        <td class="text-center text-uppercase">{{descripcion}}</td>
+                        <td class="text-center text-uppercase">${{precio}}</td>
+                        <td class="text-center"><a class="btn btn-primary" href="/comidas/edit/{{_id}}">Editar</a></td>
+                        <td class="text-center">
+                            <form action="/comidas/eliminar/{{_id}}?_method=DELETE" method="POST">
+                                <button class="btn btn-danger">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

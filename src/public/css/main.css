@@ -70,5 +70,22 @@ body{
     font-weight: 700;
 }
 
+/*Responsive Tabla*/
+@media screen and (max-width: 320px) {
+    table {
+      display: block;
+      overflow-x: auto;
+      background: white;
+    }
+}
+
+.navbar-nav .dropdown-menu{
+    position: absolute;
+    float: none;
+}
+
+
+
+
 
 

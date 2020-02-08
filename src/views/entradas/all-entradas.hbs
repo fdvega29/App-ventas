@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-    {{#each entradas}}
+        {{#each entradas}}
         <div class="col-md-3">
             <div class="card my-4">
                 <div class="card-header bg-dark" style="color: white">
@@ -16,17 +16,20 @@
                 </form>
             </div>
         </div>
-     {{else}}
+        {{else}}
         <div class="col-md-12 mt-4">
             <div class="jumbotron">
-            <h1 class="display-4">Hello {{user.email}}</h1>
-            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-            <hr class="my-4">
-            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-            <a class="btn btn-primary btn-lg" href="/entradas/add" role="button">Publicar un proyecto</a>
+                <!--<h1 class="col-md-12">Hello {{user.email}}</h1>-->
+                <h1 class="col-sm-4">Hola</h1>
+                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra
+                    attention to featured content or information.</p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.
+                </p>
+                <a class="btn btn-primary btn-lg" href="/entradas/add" role="button">Publicar un proyecto</a>
             </div>
-        </div>   
-    {{/each}}
-  </div>
+        </div>
+        {{/each}}
+    </div>
 </div>
 
