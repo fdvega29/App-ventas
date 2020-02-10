@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row mt-4">
-        <h3 class="col-sm-6 col-md-12 text-center text-uppercase" style="color: seashell;">Listado de comidas <i class="fas fa-clipboard-list"></i></h3>
+        <h3 class="col-sm-6 col-md-12 text-center text-uppercase" style="color: seashell;">Listado de bebidas <i class="fas fa-clipboard-list"></i></h3>
     </div>
 </div>
 
@@ -14,7 +14,6 @@
                         <!--<th class="text-center text-uppercase">N°</th>-->
                         <th class="text-center text-uppercase">Descripcion</th>
                         <th class="text-center text-uppercase">Precio</th>
-                        <th class="text-center text-uppercase">Creada</th>
                         <th class="text-center text-uppercase">Editar</th>
                         <th class="text-center text-uppercase">Eliminar</th>
 
@@ -23,15 +22,14 @@
                 </thead>
                 <tbody>
 
-                    {{#each comidas}}
+                    {{#each bebidas}}
                     <tr>
                         <!--<td class="text-center">{{@key}}</td>-->
                         <td class="text-center text-uppercase">{{descripcion}}</td>
                         <td class="text-center text-uppercase">${{precio}}</td>
-                        <td class="text-center text-uppercase">{{date}}</td>
-                        <td class="text-center"><a class="btn btn-primary" href="/comidas/edit/{{_id}}">Editar</a></td>
+                        <td class="text-center"><a class="btn btn-primary" href="/bebidas/edit/{{_id}}">Editar</a></td>
                         <td class="text-center">
-                            <form action="/comidas/eliminar/{{_id}}?_method=DELETE" method="POST">
+                            <form action="/bebidas/eliminar/{{_id}}?_method=DELETE" method="POST">
                                 <button class="btn btn-danger">Eliminar</button>
                             </form>
                         </td>

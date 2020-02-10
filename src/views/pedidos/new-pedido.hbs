@@ -1,39 +1,45 @@
-<div class="col-md-4 mx-auto mt-4 mb-4">
-    <div class="card">
-        <div class="card-header bg-dark">
-            <h3 class="text-white text-center">Registrar Pedido</h3>
-        </div>
-        <div class="card-body">
-            <form action="/entradas/new-entrada" method="POST">
-                <div class="form-group">
-                    <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Cliente" required>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect2">Seleccione Comidas</label>
-                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                        <option>Empanadas</option>
-                        <option>Pizza</option>
-                        <option>Milanesa</option>
-                        <option>Panchos</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="exampleFormControlSelect2">Seleccione Bebidas</label>
-                    <select multiple class="form-control" id="exampleFormControlSelect2">
-                        <option>Coca</option>
-                        <option>Sprite</option>
-                        <option>Cerveza</option>
-                        <option>Vino</option>
-                        <option>Soda</option>
-                        <option>Fernet</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <input type="number" name="total" id="total" class="form-control" placeholder="Total" required>
-                </div>
-                <div class="form-group">
-                    <button class="btn btn-primary btn-block" type="submit">Publicar</button>
-                </div>
+
+{{pedido}}
+<div class="container">
+    <div class="row">
+        <div class="card mx-auto mt-4 mb-4" style="width: 22rem;">
+            <div class="card-body">
+                <h5 class="card-title text-center">Registra tu pedido</h5>
+                <form action="/pedidos/new-pedido" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Cliente"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comidas">Seleccione comidas</label>
+                        <select multiple class="form-control">
+                            {{#each comidas}}
+                            <option>{{descripcion}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Precio comida</label>
+                        <input type="number" class="form-control" id="precioComida">
+                    </div>
+                    <div class="form-group">
+                        <label for="comidas">Seleccione bebidas</label>
+                        <select multiple class="form-control">
+                            <option></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Precio bebida</label>
+                        <input type="number" name="precioBebida" id="precioBebida" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Total a pagar</label>
+                        <input type="number" name="total" id="total" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">Registrar</button>
+                    </div>
+            </div>
             </form>
         </div>
     </div>

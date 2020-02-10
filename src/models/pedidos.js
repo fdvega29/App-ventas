@@ -2,30 +2,23 @@ const mongoose = require('mongoose')
 const { Schema } = mongoose;
 
 const pedidosSchema = new Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     cliente: {
         type: String,
         required: true
     },
 
     comida: {
-        type: String,
-        required: true
-    },
+        type: mongoose.Schema.Types.ObjectId, ref: "Comida", required: true},
 
     bebida: {
-        type: String,
-        required: true
-    },
+        type: mongoose.Schema.Types.ObjectId, ref: "Bebida", required: true},
 
     total: {
         type: Number,
         required: true
     },
-    date: {type: Date, default: Date.now},
-    pedido: {type: String},
-    estado: {
-        type: Boolean,
-        default: false}
+    date: {type: Date, default: Date.now}
 
 });
 

@@ -11,4 +11,4 @@ const bebidasSchema = new Schema({
         required: true}
 });
 
-module.exports = mongoose.model('comidas', bebidasSchema);
+module.exports = mongoose.model('bebidas', bebidasSchema);

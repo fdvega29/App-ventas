@@ -3,7 +3,8 @@ const router = express.Router();
 
 const { isAuthenticated } = require('../helpers/autenticar');
 
-const pedidosDB = require('../models/pepidos');
+const pedidosDB = require('../models/pedidos');
+const comidasDB = require('../models/comidas');
 
 router.get('/pedidos/add', isAuthenticated, (req, res) => {
         res.render('pedidos/new-pedido');
@@ -42,9 +43,24 @@ router.get('/pedidos/add', isAuthenticated, (req, res) => {
     });
 
     router.get('/pedidos', isAuthenticated, async (req, res) => {
-        const pedidos = await pedidosDB.find({}).sort({date: 'desc'});
-        res.render('pedidos/all-pedidos', {pedidos});
+       await pedidosDB.find({}, function(err, pedidos){
+            pedidos.populate(pedidos, {path: "comida"}), function(err, pedidos){
+                res.status(200).send(pedidos);
+            }
+        }).sort({date: 'desc'});
     });
+
+    router.get('/pedidos', isAuthenticated, async (req, res) => {
+        const pedido = await pedidosDB.find({lsComida: req.body._id})
+        .populate('comida')
+        .exec()
+        .sort({date: 'desc'});
+
+        
+        res.render('comidas/all-comida', {pedido});
+    });
+
+
 
     router.get('/pedidos/edit/:id', async (req, res) =>{
         const editPedido = await pedidosDB.findById(req.params.id);
