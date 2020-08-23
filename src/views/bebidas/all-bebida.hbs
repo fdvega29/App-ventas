@@ -17,9 +17,7 @@
                         <th class="text-center text-uppercase">Descripcion</th>
                         <th class="text-center text-uppercase">Precio</th>
                         <th class="text-center text-uppercase">Editar</th>
-                        <th class="text-center text-uppercase">Eliminar</th>
-
-
+                         <th class="text-center text-uppercase">Eliminar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,10 +27,10 @@
                         <!--<td class="text-center">{{_id}}</td>-->
                         <td class="text-center text-uppercase">{{descripcion}}</td>
                         <td class="text-center text-uppercase">${{precio}}</td>
-                        <td class="text-center"><a class="btn btn-primary" href="/bebidas/edit/{{_id}}">Editar</a></td>
+                        <td class="text-center text-uppercase"><a class="btn btn-primary text-center" href="/bebidas/edit/{{_id}}"><i class="far fa-edit"></i></a></td>
                         <td class="text-center">
                             <form action="/bebidas/eliminar/{{_id}}?_method=DELETE" method="POST">
-                                <button class="btn btn-danger">Eliminar</button>
+                                <button class="btn btn-danger text-center"><i class="fas fa-trash"></i></button>
                             </form>
                         </td>
                     </tr>
