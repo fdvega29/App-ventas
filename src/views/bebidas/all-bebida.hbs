@@ -1,6 +1,8 @@
 <div class="container">
     <div class="row mt-4">
-        <h3 class="col-sm-6 col-md-12 text-center text-uppercase" style="color: seashell;">Listado de bebidas <i class="fas fa-clipboard-list"></i></h3>
+        <h3 class="col-sm-6 col-md-12 text-center text-uppercase" style="color: seashell;">Listado de bebidas <i
+                class="fas fa-clipboard-list"></i><a href="/bebidas/add" class="btn btn-light" style="float: right;">Agregar bebida</a></h3>
+
     </div>
 </div>
 
@@ -24,7 +26,7 @@
 
                     {{#each bebidas}}
                     <tr>
-                        <!--<td class="text-center">{{@key}}</td>-->
+                        <!--<td class="text-center">{{_id}}</td>-->
                         <td class="text-center text-uppercase">{{descripcion}}</td>
                         <td class="text-center text-uppercase">${{precio}}</td>
                         <td class="text-center"><a class="btn btn-primary" href="/bebidas/edit/{{_id}}">Editar</a></td>

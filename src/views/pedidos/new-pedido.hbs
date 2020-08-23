@@ -1,45 +1,44 @@
-
-{{pedido}}
 <div class="container">
-    <div class="row">
-        <div class="card mx-auto mt-4 mb-4" style="width: 22rem;">
-            <div class="card-body">
-                <h5 class="card-title text-center">Registra tu pedido</h5>
-                <form action="/pedidos/new-pedido" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="titulo" id="titulo" class="form-control" placeholder="Cliente"
+    <div class="card border-secondary  mx-auto mt-4 mb-4" style="width: 22rem;">
+        <div class="card-body">
+            <h5 class="card-title text-center">Registra tu pedido</h5>
+            <hr>
+            <form action="/pedidos/new-pedido" method="POST">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <input type="text" name="cliente" id="cliente" class="form-control" placeholder="Cliente"
                             required>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-6">
                         <label for="comidas">Seleccione comidas</label>
                         <select multiple class="form-control">
-                            {{#each comidas}}
-                            <option>{{descripcion}}</option>
-                            {{/each}}
+                            <option></option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Precio comida</label>
-                        <input type="number" class="form-control" id="precioComida">
-                    </div>
-                    <div class="form-group">
+                    
+                    <div class="form-group col-md-6">
                         <label for="comidas">Seleccione bebidas</label>
                         <select multiple class="form-control">
                             <option></option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label>Precio bebida</label>
-                        <input type="number" name="precioBebida" id="precioBebida" class="form-control" required>
+
+                    <div class="form-group col-md-6">
+                        <label>Total comidas</label>
+                        <input type="number" class="form-control" id="precioComida">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-6">
+                        <label>Total bebidas</label>
+                        <input type="number" name="precioBebida" id="precioBebida" class="form-control">
+                    </div>
+                    <div class="form-group col-md-12">
                         <label>Total a pagar</label>
-                        <input type="number" name="total" id="total" class="form-control" required>
+                        <input type="number" name="total" id="total" class="form-control">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col-md-12">
                         <button class="btn btn-primary btn-block" type="submit">Registrar</button>
                     </div>
-            </div>
+                </div>
             </form>
         </div>
     </div>

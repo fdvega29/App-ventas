@@ -1,25 +1,19 @@
 const mongoose = require('mongoose')
-const { Schema } = mongoose;
+const { Schema, model } = mongoose;
 
 const pedidosSchema = new Schema({
-    _id: mongoose.Schema.Types.ObjectId,
-    cliente: {
-        type: String,
-        required: true
-    },
 
-    comida: {
-        type: mongoose.Schema.Types.ObjectId, ref: "Comida", required: true},
+    cliente: {type: String, required: true},
 
-    bebida: {
-        type: mongoose.Schema.Types.ObjectId, ref: "Bebida", required: true},
+    total: {type: Number, required: true},
 
-    total: {
-        type: Number,
-        required: true
-    },
-    date: {type: Date, default: Date.now}
+    idComidas: {type: mongoose.Schema.Types.ObjectId, ref: "Comida"},
 
-});
+    idBebidas: {type: mongoose.Schema.Types.ObjectId, ref: "Bebida"}
+},
+{
+    timestamps: true
+}
+);
 
-module.exports = mongoose.model('pedido', pedidosSchema);
+module.exports = model('pedido', pedidosSchema);

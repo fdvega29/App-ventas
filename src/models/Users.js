@@ -4,8 +4,10 @@ const bcrypt =  require('bcryptjs');
 
 const usersSchema = new Schema({
     email : { type: String, required: true},
-    password : { type: String, required: true},
-    date : { type: Date, default: Date.now}
+    password : { type: String, required: true}
+},
+{
+    timestamps: true
 });
 
 usersSchema.methods.encryptPassword = async (password) => {

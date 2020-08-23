@@ -1,14 +1,19 @@
 const mongoose = require('mongoose')
-const {Schema} = mongoose;
+const {Schema, model} = mongoose;
 
 const bebidasSchema = new Schema({
+
     descripcion: {
         type: String,
         required: true},
 
     precio: { 
         type: Number,
-        required: true}
-});
+        required: true},
+},
+{
+    timestamps: true
+}
+);
 
-module.exports = mongoose.model('bebidas', bebidasSchema);
+module.exports = model('Bebida', bebidasSchema);

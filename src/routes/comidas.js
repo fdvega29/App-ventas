@@ -27,8 +27,7 @@ router.post('/comidas/new-comida', isAuthenticated, async (req, res) => {
             precio
         });
     }else{
-         const newComida = new comidasDB({ descripcion, precio });
-         //newComida.lsComida = req.lsComida._id;
+         const newComida = new comidasDB({descripcion, precio});
          await newComida.save();
          req.flash('success_msg', 'Comida agregada con exito');
          res.redirect('/comidas');

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/entradasBlog',{
+mongoose.connect('mongodb+srv://fdvega29:Fer_2911@cluster0.1b1q6.mongodb.net/<dbname>?retryWrites=true&w=majority',{
     useCreateIndex: true,
     useNewUrlParser: true,
     useFindAndModify: false
