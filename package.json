@@ -1,10 +1,10 @@
 {
-  "name": "note-app",
+  "name": "app-ventas-1",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": " nodemon index.js",
     "dev": "nodemon src/index.js"
   },
   "keywords": [],
@@ -20,9 +20,7 @@
     "method-override": "^3.0.0",
     "mongoose": "^5.4.20",
     "passport": "^0.4.0",
-    "passport-local": "^1.0.0"
-  },
-  "devDependencies": {
+    "passport-local": "^1.0.0",
     "nodemon": "^1.18.10"
   }
 }
